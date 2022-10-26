@@ -1,0 +1,311 @@
+*,
+*::after,
+*::before {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  color: white;
+}
+
+//========================================================================================================================================================
+
+.container {
+  max-width: 1720px;
+  margin: auto;
+}
+
+@font-face {
+  font-family: "neue-kabel";
+  src: url("https://use.typekit.net/af/bb656a/00000000000000007735bafc/30/l?primer=7cdcb44be4a7db8877ffa5c0007b8dd865b3bbc383831fe2ea177f62257a9191&fvd=n9&v=3")
+      format("woff2"),
+    url("https://use.typekit.net/af/bb656a/00000000000000007735bafc/30/d?primer=7cdcb44be4a7db8877ffa5c0007b8dd865b3bbc383831fe2ea177f62257a9191&fvd=n9&v=3")
+      format("woff"),
+    url("https://use.typekit.net/af/bb656a/00000000000000007735bafc/30/a?primer=7cdcb44be4a7db8877ffa5c0007b8dd865b3bbc383831fe2ea177f62257a9191&fvd=n9&v=3")
+      format("opentype");
+  font-display: swap;
+  font-style: normal;
+  font-weight: 900;
+  font-stretch: normal;
+}
+
+@font-face {
+  font-family: "roc-grotesk";
+  src: url("https://use.typekit.net/af/975d46/00000000000000007735b7c3/30/l?primer=7cdcb44be4a7db8877ffa5c0007b8dd865b3bbc383831fe2ea177f62257a9191&fvd=n7&v=3")
+      format("woff2"),
+    url("https://use.typekit.net/af/975d46/00000000000000007735b7c3/30/d?primer=7cdcb44be4a7db8877ffa5c0007b8dd865b3bbc383831fe2ea177f62257a9191&fvd=n7&v=3")
+      format("woff"),
+    url("https://use.typekit.net/af/975d46/00000000000000007735b7c3/30/a?primer=7cdcb44be4a7db8877ffa5c0007b8dd865b3bbc383831fe2ea177f62257a9191&fvd=n7&v=3")
+      format("opentype");
+  font-display: swap;
+  font-style: normal;
+  font-weight: 700;
+  font-stretch: normal;
+}
+
+@font-face {
+  font-family: "roc-grotesk";
+  src: url("https://use.typekit.net/af/97dd77/00000000000000007735b7d4/30/l?primer=7cdcb44be4a7db8877ffa5c0007b8dd865b3bbc383831fe2ea177f62257a9191&fvd=n4&v=3")
+      format("woff2"),
+    url("https://use.typekit.net/af/97dd77/00000000000000007735b7d4/30/d?primer=7cdcb44be4a7db8877ffa5c0007b8dd865b3bbc383831fe2ea177f62257a9191&fvd=n4&v=3")
+      format("woff"),
+    url("https://use.typekit.net/af/97dd77/00000000000000007735b7d4/30/a?primer=7cdcb44be4a7db8877ffa5c0007b8dd865b3bbc383831fe2ea177f62257a9191&fvd=n4&v=3")
+      format("opentype");
+  font-display: swap;
+  font-style: normal;
+  font-weight: 400;
+  font-stretch: normal;
+}
+
+@font-face {
+  font-family: "space-mono";
+  src: url("https://use.typekit.net/af/d27913/00000000000000007735e94a/30/l?primer=7cdcb44be4a7db8877ffa5c0007b8dd865b3bbc383831fe2ea177f62257a9191&fvd=n4&v=3")
+      format("woff2"),
+    url("https://use.typekit.net/af/d27913/00000000000000007735e94a/30/d?primer=7cdcb44be4a7db8877ffa5c0007b8dd865b3bbc383831fe2ea177f62257a9191&fvd=n4&v=3")
+      format("woff"),
+    url("https://use.typekit.net/af/d27913/00000000000000007735e94a/30/a?primer=7cdcb44be4a7db8877ffa5c0007b8dd865b3bbc383831fe2ea177f62257a9191&fvd=n4&v=3")
+      format("opentype");
+  font-display: swap;
+  font-style: normal;
+  font-weight: 400;
+  font-stretch: normal;
+}
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+ul {
+  list-style: none;
+}
+
+body {
+  overflow-x: hidden;
+}
+//========================================================================================================================================================
+
+.nav {
+  &.hide {
+    transform: translateY(-100%);
+  }
+  transition: all 0.8s ease 0s;
+  background-image: linear-gradient(
+    rgb(0, 0, 0) -26.05%,
+    rgba(0, 0, 0, 0) 94.47%
+  );
+  padding: 46px;
+  z-index: 30;
+  position: fixed;
+  width: 100%;
+  top: 0;
+  left: 0;
+  .container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+  }
+
+  .logo {
+    font-family: neue-kabel, sans-serif;
+    font-size: 90px;
+    margin-bottom: 13px;
+    a {
+      display: flex;
+      align-items: center;
+      gap: 22px;
+    }
+    img {
+      width: 61px;
+    }
+  }
+  ul {
+    display: flex;
+    align-items: center;
+    gap: 50px;
+    font-family: roc-grotesk, sans-serif;
+    font-size: 18px;
+    a {
+      position: relative;
+
+      &::after {
+        background: white;
+        content: "";
+        height: 1px;
+        opacity: 0;
+        // transform: matrix(1, 0, 0, 1, 0, 23.1878);
+        transform: translateY(23px);
+        width: 100%;
+        transition: opacity 0.3s, transform 0.3s;
+        position: absolute;
+        top: 100%;
+        left: 0;
+      }
+
+      @media (any-hover: hover) {
+        &:hover {
+          &::after {
+            opacity: 1;
+            transform: translateY(0);
+          }
+        }
+      }
+    }
+  }
+}
+
+.-upper {
+  text-transform: uppercase;
+}
+
+//========================================================================================================================================================
+
+#static {
+  background-color: rgb(49, 49, 49);
+  height: 100vh;
+  width: 100vw;
+  z-index: -1;
+  position: fixed;
+  top: 0;
+  left: 0;
+}
+.video-wrap {
+  pointer-events: none;
+  z-index: -1;
+  position: fixed;
+  max-height: 100vh;
+  width: 100%;
+  inset: 0;
+  .video {
+    height: 100%;
+    width: 100%;
+    z-index: -1;
+    position: absolute;
+    video {
+      position: absolute;
+      height: 100%;
+      object-fit: cover;
+      width: 100%;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+    }
+  }
+}
+main {
+  article {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 1;
+    .hero {
+      min-height: 100%;
+      min-width: 100%;
+      text-align: center;
+      justify-content: center;
+      align-items: center;
+      display: flex;
+      height: 100vh;
+
+      .display {
+        font-family: "neue-kabel";
+        font-size: 127px;
+      }
+
+      .text-marq-wrap {
+        position: absolute;
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+        bottom: 0;
+        left: 50px;
+        left: 100%;
+        width: 100%;
+      }
+
+      p.text-marq {
+        font-family: roc-grotesk, serif;
+        font-size: 16px;
+      }
+
+      .-center {
+        left: 50%;
+        top: 50%;
+        width: 100%;
+        transform: translate(-50%, -50%);
+      }
+
+      .h2 {
+        font-size: 68px;
+      }
+
+      .line-split {
+        font-family: neue-kabel, sans-serif;
+        position: absolute;
+      }
+
+      .split-line {
+      }
+    }
+  }
+  .artist {
+    height: 100vh;
+    min-width: 100%;
+    background-color: #fff;
+    color: black;
+    position: relative;
+    z-index: 2;
+    .video-wrap {
+      position: absolute;
+      width: 100%;
+      // width: 100% !important;
+      height: 100vh;
+      video {
+        min-width: 100%;
+        // width: 100%;
+        // height: 100% !important;
+      }
+    }
+
+    .text-marq-wrap {
+      position: absolute;
+      z-index: 20;
+      display: flex;
+      flex-direction: column;
+      align-items: flex-start;
+      bottom: 0;
+      left: 50px;
+      left: 100%;
+      width: 100%;
+    }
+
+    .trust {
+      max-width: 245px;
+      overflow: hidden;
+    }
+    .display {
+      font-family: "neue-kabel";
+      font-size: 127px;
+    }
+    p {
+      font-family: roc-grotesk, serif;
+      font-size: 16px;
+      display: flex;
+      width: max-content;
+      gap: 3px;
+    }
+
+    .part1 {
+      animation: cycle 5s linear infinite;
+    }
+    .part2 {
+      animation: cycle 5s linear infinite;
+    }
+
+    @keyframes cycle {
+      to {
+        transform: translate(-100%);
+      }
+    }
+  }
+}
